@@ -1,0 +1,82 @@
+\documentclass[12pt,oneside,letterpaper]{memoir}
+
+\usepackage{iftex}
+\RequireLuaTeX
+
+\usepackage{fontspec}
+
+% \usepackage{xcolor}
+\usepackage{tikz}
+
+\usepackage[
+  hyperfootnotes=false,
+  hidelinks,
+  linktoc=all,
+  pdfauthor={Ivan Pogrebnyak},
+  pdftitle={Brewing}
+]{hyperref}
+
+\author{Ivan Pogrebnyak}
+\title{Brewing notes}
+\date{\today}
+
+\setlrmarginsandblock{1in}{1in}{*}
+\setulmarginsandblock{1in}{1in}{*}
+\checkandfixthelayout
+
+\makepagestyle{all}
+\makeoddhead{all}{\thetitle}{}{\thesection~\currentsection}
+\makeoddfoot{all}{}{}{\thepage}
+% \makeevenhead{all}{}{}{}
+% \makeevenfoot{all}{}{}{}
+\pagestyle{all}
+
+% \counterwithout{section}{chapter}
+
+\begin{document}
+
+\frontmatter
+
+\pagestyle{empty}
+\tikz[remember picture,overlay]
+\node[opacity=0.3,inner sep=0pt] at (current page.center){
+  \includegraphics[width=\paperwidth]{fig/mug.pdf}
+};
+\begin{center}
+  {\HUGE\thetitle}\\[0.25in]
+  \theauthor
+  \vfill
+  \thedate
+\end{center}
+
+\clearpage
+
+\begin{KeepFromToc}
+  \tableofcontents
+\end{KeepFromToc}
+
+\mainmatter
+
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{0.5em}
+
+\chapter{Recipes}
+\section{The fairy}
+Description
+
+\subsection{Ingredients}
+For 5 gal of beer:
+\begin{itemize}
+  \item Light malt extract: 6 lb, liquid
+  \item Honey: 1 lb
+  \item Yeast: SafAle™ US-05
+  \item Hops: Goldings, 2 × 1 oz bags, pellets
+  \item Lavander
+  \item Coriander, whole crushed
+  \item Chamomile
+  \item Heather tips
+  \item Ginger
+
+\end{itemize}
+
+\end{document}
