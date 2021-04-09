@@ -1,6 +1,6 @@
 NAME = brewing
 
-TEX = lualatex -interaction=batchmode -shell-escape
+TEX = pdflatex -interaction=batchmode -shell-escape
 # BIB = bibtex -terse
 BIB = biber --nolog -m 99
 # -m 99 suppresses cross references that are not directly cited
